@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+body > *:not(.wave-bg) {
+  position: relative;
+  z-index: 2;
+}
+
 body {
   margin: 0;
   background: #0E0F0F;
@@ -134,4 +139,66 @@ footer {
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
+}
+
+.wave-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(180deg, #0E0F0F 0%, #161818 100%);
+  overflow: hidden;
+}
+
+.wave-bg svg {
+  position: absolute;
+  bottom: -10%;
+  width: 200%;
+  height: 120%;
+}
+
+.wave {
+  fill: rgba(122, 139, 111, 0.08);
+  animation: waveMove 20s ease-in-out infinite alternate;
+}
+
+.wave1 {
+  animation-duration: 22s;
+}
+
+.wave2 {
+  fill: rgba(201, 179, 126, 0.06);
+  animation-duration: 28s;
+}
+
+.wave3 {
+  fill: rgba(255, 255, 255, 0.03);
+  animation-duration: 35s;
+}
+
+@keyframes waveMove {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  100% {
+    transform: translateX(-15%) translateY(-10px);
+  }
+}
+
+.wave-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 80%, rgba(201,179,126,0.08), transparent 60%);
+}
+
+@keyframes waveMove {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  50% {
+    transform: translateX(-8%) translateY(-15px);
+  }
+  100% {
+    transform: translateX(-15%) translateY(0);
+  }
 }
