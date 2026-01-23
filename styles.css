@@ -1,0 +1,137 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #0E0F0F;
+  color: #F1EEE9;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+.noise {
+  position: fixed;
+  inset: 0;
+  background: url('https://grainy-gradients.vercel.app/noise.svg');
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 2;
+  position: relative;
+}
+
+h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 4rem;
+  font-weight: 600;
+}
+
+.hero-sub {
+  font-size: 1.2rem;
+  color: #B5B2AC;
+  margin-top: 1rem;
+}
+
+.hero-buttons {
+  margin-top: 2.5rem;
+}
+
+.btn {
+  padding: 0.9rem 1.8rem;
+  margin: 0.4rem;
+  border-radius: 40px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: all 0.4s ease;
+}
+
+.glow {
+  background: linear-gradient(135deg, #7A8B6F, #C9B37E);
+  color: #0E0F0F;
+}
+
+.glow:hover {
+  box-shadow: 0 0 30px rgba(201,179,126,0.4);
+}
+
+.ghost {
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #F1EEE9;
+}
+
+.glass {
+  max-width: 700px;
+  margin: 8rem auto;
+  padding: 3rem;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 6rem 2rem;
+}
+
+.card {
+  background: rgba(255,255,255,0.05);
+  padding: 2.5rem;
+  border-radius: 25px;
+  min-width: 220px;
+  text-align: center;
+  backdrop-filter: blur(15px);
+}
+
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.delay { animation-delay: 1.5s; }
+.delay2 { animation-delay: 3s; }
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+
+.statement {
+  text-align: center;
+  margin: 10rem 2rem;
+}
+
+.contact {
+  text-align: center;
+  margin-bottom: 8rem;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.7rem;
+  color: #B5B2AC;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
