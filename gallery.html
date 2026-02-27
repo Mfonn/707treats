@@ -11,6 +11,23 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 
+<script>
+const videos = document.querySelectorAll("video");
+
+const videoObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.play();
+    } else {
+      entry.target.pause();
+    }
+  });
+}, { threshold: 0.5 });
+
+videos.forEach(video => {
+  videoObserver.observe(video);
+});
+</script>
 <body>
 
   <!-- Floating Background Glow -->
@@ -25,75 +42,70 @@
   <!-- Services Grid -->
   <section class="services-grid">
 
-    <!-- SERVICE 1 -->
-    <div class="service-card">
-      <div class="media">
-        <img src="service1.jpg" alt="Herbal Tea Experience">
-      </div>
-      <div class="content">
-        <h3>Herbal Tea Experiences</h3>
-        <p>
-          Thoughtfully blended herbal infusions served at gatherings, wellness spaces, 
-          and private moments. A slow ritual in every cup.
-        </p>
-      </div>
-    </div>
 
-    <!-- SERVICE 2 -->
-    <div class="service-card delay1">
-      <div class="media">
-        <img src="service2.jpg" alt="Plant Matching Service">
-      </div>
-      <div class="content">
-        <h3>Plant Matching</h3>
-        <p>
-          We listen, understand your space or intention, and select a plant suited 
-          specifically for you — planted with care.
-        </p>
-      </div>
-    </div>
 
-    <!-- SERVICE 3 -->
-    <div class="service-card delay2">
-      <div class="media">
-        <img src="service3.jpg" alt="Pop-Up Event Setup">
-      </div>
-      <div class="content">
-        <h3>Pop-Ups & Events</h3>
-        <p>
-          Curated tea installations and botanical setups designed for intimate 
-          events, collaborations, and wellness gatherings.
-        </p>
-      </div>
-    </div>
+    <!-- VIDEO 1 -->
+<div class="service-card">
+  <div class="media video-media">
+    <video autoplay muted loop playsinline preload="metadata">
+      <source src="Assets/tea-experience.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="content">
+    <h3>Herbal Tea Experience</h3>
+    <p>Thoughtfully blended herbal infusions served at gatherings, wellness spaces, 
+          and private moments. A slow ritual in every cup..</p>
+  </div>
+</div>
 
-    <!-- SERVICE 4 -->
-    <div class="service-card">
-      <div class="media">
-        <img src="service4.jpg" alt="Garden Setup">
-      </div>
-      <div class="content">
-        <h3>Garden Setup</h3>
-        <p>
-          Transforming small spaces into living environments through intentional 
-          plant placement and thoughtful design.
-        </p>
-      </div>
-    </div>
+<!-- VIDEO 2 -->
+<div class="service-card delay1">
+  <div class="media video-media">
+    <video autoplay muted loop playsinline preload="metadata">
+      <source src="Assets/plant-matching.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="content">
+    <h3>Plant Matching</h3>
+    <p>We listen, understand your space or intention, and select a plant suited 
+          specifically for you — planted with care.</p>
+  </div>
+</div>
 
-    <!-- SERVICE 5 -->
-    <div class="service-card delay1">
-      <div class="media">
-        <img src="service5.jpg" alt="Custom Blends">
-      </div>
-      <div class="content">
-        <h3>Custom Herbal Blends</h3>
-        <p>
-          Personalized tea blends crafted for your preferences, events, or 
-          lifestyle needs — simple, refined, and botanical.
-        </p>
-      </div>
-    </div>
+
+
+
+    <!-- VIDEO 3 -->
+<div class="service-card delay1">
+  <div class="media video-media">
+    <video autoplay muted loop playsinline preload="metadata">
+      <source src="Assets/pop-up.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="content">
+    <h3>Pop-Usps & Events </h3>
+    <p>Curated tea installations and botanical setups designed for intimate 
+          events, collaborations, and wellness gatherings.</p>
+  </div>
+</div>
+
+    
+    <!-- VIDEO 4 -->
+<div class="service-card delay1">
+  <div class="media video-media">
+    <video autoplay muted loop playsinline preload="metadata">
+      <source src="Assets/Custom-blend.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="content">
+    <h3> Custom Herbal Blends </h3>
+    <p>Personalized tea blends crafted for your preferences, events, or 
+          lifestyle needs </p>
+  </div>
+</div>
+
+
+
 
   </section>
 
