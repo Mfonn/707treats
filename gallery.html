@@ -2,118 +2,114 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <!-- Viewport meta for mobile responsiveness -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Our Services | 707 Healthy Treats</title>
   <meta name="description" content="Explore herbal tea experiences, plant matching, pop-ups and botanical services in Abuja, Nigeria.">
 
-  <link rel="stylesheet" href="gallery.css">
-
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-</head>
+  <link rel="stylesheet" href="gallery.css">
 
-<script>
-const videos = document.querySelectorAll("video");
-
-const videoObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.play();
-    } else {
-      entry.target.pause();
-    }
-  });
-}, { threshold: 0.5 });
-
-videos.forEach(video => {
-  videoObserver.observe(video);
-});
-</script>
 <body>
 
-  <!-- Floating Background Glow -->
-  <div class="background-glow"></div>
-
-  <!-- Header -->
-  <header class="page-header">
-    <h1>Our Services</h1>
-    <p>Botanical experiences crafted with intention.</p>
-  </header>
-
-  <!-- Services Grid -->
-  <section class="services-grid">
-
-
-
-    <!-- VIDEO 1 -->
-<div class="service-card">
-  <div class="media video-media">
-    <video autoplay muted loop playsinline preload="metadata">
-      <source src="Assets/tea-experience.mp4" type="video/mp4">
-    </video>
-  </div>
-  <div class="content">
-    <h3>Herbal Tea Experience</h3>
-    <p>Thoughtfully blended herbal infusions served at gatherings, wellness spaces, 
-          and private moments. A slow ritual in every cup..</p>
-  </div>
+<!-- LIGHT WAVE BACKGROUND -->
+<div class="wave-bg">
+  <svg viewBox="0 0 1440 600" preserveAspectRatio="none">
+    <path class="wave wave1"
+      d="M0,300 C240,360 480,240 720,300 960,360 1200,240 1440,300 L1440,600 L0,600 Z"/>
+    <path class="wave wave2"
+      d="M0,320 C240,380 480,260 720,320 960,380 1200,260 1440,320 L1440,600 L0,600 Z"/>
+    <path class="wave wave3"
+      d="M0,340 C240,400 480,280 720,340 960,400 1200,280 1440,340 L1440,600 L0,600 Z"/>
+  </svg>
 </div>
 
-<!-- VIDEO 2 -->
-<div class="service-card delay1">
-  <div class="media video-media">
-    <video autoplay muted loop playsinline preload="metadata">
-      <source src="Assets/plant-matching.mp4" type="video/mp4">
-    </video>
+<!-- Header -->
+<header class="page-header">
+  <h1>Our Services</h1>
+  <p>Botanical experiences crafted with intention.</p>
+</header>
+
+<!-- Services Grid -->
+<section class="services-grid">
+
+  <!-- VIDEO 1 -->
+  <div class="service-card">
+    <div class="media video-media">
+      <video autoplay muted loop playsinline preload="metadata">
+        <source src="Assets/tea-experience.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="content">
+      <h3>Herbal Tea Experience</h3>
+      <p>Thoughtfully blended herbal infusions served at gatherings, wellness spaces, and private moments. A slow ritual in every cup.</p>
+    </div>
   </div>
-  <div class="content">
-    <h3>Plant Matching</h3>
-    <p>We listen, understand your space or intention, and select a plant suited 
-          specifically for you — planted with care.</p>
+
+  <!-- VIDEO 2 -->
+  <div class="service-card delay1">
+    <div class="media video-media">
+      <video autoplay muted loop playsinline preload="metadata">
+        <source src="Assets/plant-matching.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="content">
+      <h3>Plant Matching</h3>
+      <p>We listen, understand your space or intention, and select a plant suited specifically for you — planted with care.</p>
+    </div>
   </div>
-</div>
 
-
-
-
-    <!-- VIDEO 3 -->
-<div class="service-card delay1">
-  <div class="media video-media">
-    <video autoplay muted loop playsinline preload="metadata">
-      <source src="Assets/pop-up.mp4" type="video/mp4">
-    </video>
+  <!-- VIDEO 3 -->
+  <div class="service-card delay1">
+    <div class="media video-media">
+      <video autoplay muted loop playsinline preload="metadata">
+        <source src="Assets/pop-up.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="content">
+      <h3>Pop-Ups & Events</h3>
+      <p>Curated tea installations and botanical setups designed for intimate events, collaborations, and wellness gatherings.</p>
+    </div>
   </div>
-  <div class="content">
-    <h3>Pop-Usps & Events </h3>
-    <p>Curated tea installations and botanical setups designed for intimate 
-          events, collaborations, and wellness gatherings.</p>
+
+  <!-- VIDEO 4 -->
+  <div class="service-card delay1">
+    <div class="media video-media">
+      <video autoplay muted loop playsinline preload="metadata">
+        <source src="Assets/Custom-blend.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="content">
+      <h3>Custom Herbal Blends</h3>
+      <p>Personalized tea blends crafted for your preferences, events, or lifestyle needs.</p>
+    </div>
   </div>
-</div>
 
-    
-    <!-- VIDEO 4 -->
-<div class="service-card delay1">
-  <div class="media video-media">
-    <video autoplay muted loop playsinline preload="metadata">
-      <source src="Assets/Custom-blend.mp4" type="video/mp4">
-    </video>
-  </div>
-  <div class="content">
-    <h3> Custom Herbal Blends </h3>
-    <p>Personalized tea blends crafted for your preferences, events, or 
-          lifestyle needs </p>
-  </div>
-</div>
+</section>
 
+<!-- Scroll animations & video observer -->
+<script>
+  (function() {
+    // ----- Video play/pause on visibility -----
+    const videos = document.querySelectorAll("video");
+    if (videos.length) {
+      const videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.play().catch(e => {}); // catch autoplay interruptions
+          } else {
+            entry.target.pause();
+          }
+        });
+      }, { threshold: 0.5 });
 
+      videos.forEach(video => videoObserver.observe(video));
+    }
 
-
-  </section>
-
-  <!-- Optional Simple Scroll Animation Script -->
-  <script>
+    // ----- Card reveal on scroll -----
     const cards = document.querySelectorAll('.service-card');
-
-    const observer = new IntersectionObserver(entries => {
+    const cardObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if(entry.isIntersecting){
           entry.target.classList.add('show');
@@ -121,8 +117,9 @@ videos.forEach(video => {
       });
     }, { threshold: 0.2 });
 
-    cards.forEach(card => observer.observe(card));
-  </script>
+    cards.forEach(card => cardObserver.observe(card));
+  })();
+</script>
 
 </body>
 </html>
